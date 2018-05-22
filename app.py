@@ -40,7 +40,7 @@ def callback():
 def handle_message(event):
     print(event)
     #line用來傳遞event的方法
-    message = TextSendMessagetext=event.message.text)
+    message = TextSendMessage(text=event.message.text)
     line_bot_api.reply_message(
         event.reply_token,
         message)

@@ -40,7 +40,13 @@ def callback():
 def handle_message(event):
     print(event)
     #line用來傳遞event的方法
-    message = TextSendMessage(text=event.message.text)
+    m = event.message.text
+    if(m=="123"):
+        myreply = "站著穿"
+    else:
+        myreply = m
+
+    message = TextSendMessage(text=myreply)
     line_bot_api.reply_message(
         event.reply_token,
         message)

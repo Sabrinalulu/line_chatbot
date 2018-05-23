@@ -24,12 +24,12 @@ Verify you have already：
   ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/create.png)
 2. Set an App name you like and click Create App 
   ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/create1.png)
-3. Download sample code [sample code](https://github.com/yaoandy107/line-bot-tutorial/archive/master.zip)
+3. Download [sample code](https://github.com/yaoandy107/line-bot-tutorial/archive/master.zip)
 4. Enter [Line setting](https://developers.line.me/console/) to add new provider and select it
   ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/line_panel.png)
 5. Get **channel secret** and **channel access token**，if there aren't any texts，click <Issue>
 6. Open sample code file: 'app.py' on your IDE ，input **channel secret** and **channel access token** into hint fields
-  ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/token.png)
+  ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/token1.png)
 7. Use Heroku CLI to deploy the code onto Heroku（Please refer to [How to use Heroku CLI](#How-to-use-Heroku-CLI))
 8. Use the below URL to set webhook URL on the app control panel(LINE)
   `{HEROKU_APP_NAME}.herokuapp.com/callback`
@@ -49,7 +49,7 @@ Verify you have already：
 ```shell＝
 heroku login
 ```
-4. Initialize git＜/br＞＜/br＞
+4. Initialize git
 (當有一個專案在網路上運行的，但從來沒做過版本管理，此時想為他做版本管理時，且已安裝git後的情況下。操作時，首先設定全域的使用者與e-mail)
 ``` shell=
 $ git config --global user.name "user_name"

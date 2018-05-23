@@ -15,25 +15,28 @@ If you want to use other languages to set up LINE BOT, check out LINE Bot SDK re
 
 Verify you have already：
 
-- created a Messaging API on LINE backend control panel [#document](https://developers.line.me/en/docs/messaging-api/getting-started/)
+- created a Messaging API on LINE backend control panel [Official Guide](https://developers.line.me/en/docs/messaging-api/getting-started/)
 - created a [Heroku](https://www.heroku.com) account (free)
 
 ## Implement
 
 1. Log in [Heroku](https://dashboard.heroku.com/apps)，click New -> Create New App   
-  ![](https://i.imgur.com/Y3njp7I.png)
+  ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/create.png)
 2. Set an App name you like and click Create App 
-  ![](https://i.imgur.com/WJ85jXR.png)
+  ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/create1.png)
 3. Download sample code [sample code](https://github.com/yaoandy107/line-bot-tutorial/archive/master.zip)
 4. Enter [Line setting](https://developers.line.me/console/) to add new provider and select it
-  ![](https://i.imgur.com/n3bQym2.png)
+  ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/line_panel.png)
 5. Get **channel secret** and **channel access token**，if there aren't any texts，click <Issue>
 6. Open sample code file: 'app.py' on your IDE ，input **channel secret** and **channel access token** into hint fields
-  ![](https://i.imgur.com/Uz16joi.png)
+  ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/token.png)
 7. Use Heroku CLI to deploy the code onto Heroku（Please refer to [How to use Heroku CLI](#How-to-use-Heroku-CLI))
 8. Use the below URL to set webhook URL on the app control panel(LINE)
   `{HEROKU_APP_NAME}.herokuapp.com/callback`
-  NOTE：{HEROKU_APP_NAME} is name which you set at step 2
+  NOTE：{HEROKU_APP_NAME} is the name which you set at step 2
+  NOTE：If you would like to control which messages will be sent back, the webhooks has to be enabled. 
+  NOTE："Allow bot to join group chats" controls group chatbot or one-to-one.
+  ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/setting.png)
 9. Scan the QR Code on LINE “Channel settings” , your chatbot will be add into your friend list
 10. Send text messages to the chatbot on LINE, verify it has been created successfully
 
@@ -46,7 +49,7 @@ Verify you have already：
 ```shell＝
 heroku login
 ```
-4. Initialize git
+4. Initialize git＜/br＞＜/br＞
 (當有一個專案在網路上運行的，但從來沒做過版本管理，此時想為他做版本管理時，且已安裝git後的情況下。操作時，首先設定全域的使用者與e-mail)
 ``` shell=
 $ git config --global user.name "user_name"
@@ -66,7 +69,7 @@ git remote add "heroku" https://git.heroku.com/{HEROKU_APP_NAME}.git
 ```
     Note：{HEROKU_APP_NAME} is name which you set at step 2
     Note：remove -v to make sure it is fine
-7. Add all files under the current file (smaple code location) into the git list
+7. Add all files under the sample code folder into the git list
 ```shell
 git add .
 ```
@@ -79,13 +82,13 @@ git commit -m "Init"
 ```shell
 git push heroku master
 ```
-**When updating the code, just execute step 7,8,9 again**
+**When updating the code, you just need to execute step 7,8,9**
 
 ## Explanation
 ```
 You need two files to run the program on heroku
 ```
-- Procfile：let heroku run code，web: {language} {file_name}，language: python，the file going to execute: app.py，因此我們改成 **web: python app.py**。
+- Procfile：let heroku run code，web: {language} {file_name}，language: python，the file going to execute: app.py，so we change the original one to **web: python app.py**。
 - requirements.txt：every package you need. Heroku will follow this file to install packages.
 
 ### app.py
@@ -93,11 +96,8 @@ Manipulate handle_message() to present differnt replies
 
 ![](https://i.imgur.com/DNeNbpV.png)
 
-新版範例程式碼內附註解
-如想更多了解此程式，可以去研究 Python3、[Flask 套件](http://docs.jinkan.org/docs/flask/)、[Line bot sdk](https://github.com/line/line-bot-sdk-python)
 
-
-## More
+## Others
 [Official Guide](https://github.com/line/line-bot-sdk-python#api)
 ### Basic Operation
 #### Reply Message
@@ -110,7 +110,7 @@ bot needs a push method to implement，or it may pop out errors
 line_bot_api.push_message(push_token, 訊息物件)
 ```
 
-### 傳送訊息物件
+### Sendind message objects
 
 [Official Guide](https://devdocs.line.me/en/#send-message-object)
 

@@ -4,12 +4,7 @@
 A Python program presents how to create a LINE Bot SDK on Heroku.
 
 If you want to use other languages to set up LINE BOT, check out LINE Bot SDK repositories as follows:
-- [PHP](https://github.com/line/line-bot-sdk-php)
-- [Go](https://github.com/line/line-bot-sdk-go)
-- [Perl](https://github.com/line/line-bot-sdk-perl)
-- [Ruby](https://github.com/line/line-bot-sdk-ruby)
-- [Python](https://github.com/line/line-bot-sdk-python)
-- [Node.js](https://github.com/line/line-bot-sdk-nodejs)
+- [PHP](https://github.com/line/line-bot-sdk-php),[Go](https://github.com/line/line-bot-sdk-go),[Perl](https://github.com/line/line-bot-sdk-perl),[Ruby](https://github.com/line/line-bot-sdk-ruby),[Python](https://github.com/line/line-bot-sdk-python),[Node.js](https://github.com/line/line-bot-sdk-nodejs)
 
 ## At the very first
 
@@ -115,4 +110,4 @@ line_bot_api.push_message(push_token, 訊息物件)
 [Official Guide](https://devdocs.line.me/en/#send-message-object)
 
 Modify handle_message() method in the sample code to present differnt functions.
-![](https://github.com/Sabrinalulu/line_chatbot/blob/master/more_functions.md)
+![GO](https://github.com/Sabrinalulu/line_chatbot/blob/master/more_functions.md)

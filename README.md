@@ -84,9 +84,9 @@ git push heroku master
 ```
 **When updating the code, you just need to execute step 7,8,9**
 
-## Explanation
+## Explanation of the sample code
 ```
-You need two files to run the program on heroku
+You need at least two files to run the program on heroku
 ```
 - Procfile：let heroku run code，web: {language} {file_name}，language: python，the file going to execute: app.py，so we change the original one to **web: python app.py**。
 - requirements.txt：every package you need. Heroku will follow this file to install packages.

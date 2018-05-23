@@ -1,8 +1,9 @@
-# Line Bot 教學
+# Line Bot 
+(This README.md is reference to [yaoandy107](https://github.com/yaoandy107/line-bot-tutorial))
 
-本教程介紹如何使用 Python LINE Bot SDK 在 Heroku 上架設一個簡單的學舌鳥機器人。
+A Python program presents how to create a LINE Bot SDK on Heroku.
 
-如果您想以另一種語言架設範例 bot，請參閱以下  LINE Bot SDK repositories。
+If you want to use other languages to set up LINE BOT, check out LINE Bot SDK repositories as follows:
 - [PHP](https://github.com/line/line-bot-sdk-php)
 - [Go](https://github.com/line/line-bot-sdk-go)
 - [Perl](https://github.com/line/line-bot-sdk-perl)
@@ -10,104 +11,85 @@
 - [Python](https://github.com/line/line-bot-sdk-python)
 - [Node.js](https://github.com/line/line-bot-sdk-nodejs)
 
-## 在你開始之前
+## At the very first
 
-確保您具有以下內容：
+Verify you have already：
 
-- 在 Line 的控制台為您的機器人創建了一個頻道 [#教學](https://developers.line.me/en/docs/messaging-api/getting-started/)
-- 一個 [Heroku](https://www.heroku.com) 的帳戶（您可以免費創建一個）
+- created a Messaging API on LINE backend control panel [#document](https://developers.line.me/en/docs/messaging-api/getting-started/)
+- created a [Heroku](https://www.heroku.com) account (free)
 
-## 架設範例機器人
+## Implement
 
-按照以下步驟架設一個學舌鳥機器人。
-
-
-1. 登入 Heroku 後，
-  在 [Heroku](https://dashboard.heroku.com/apps) 頁面中，點選 New -> Create New App
+1. Log in [Heroku](https://dashboard.heroku.com/apps)，click New -> Create New App   
   ![](https://i.imgur.com/Y3njp7I.png)
-2. 輸入自己喜歡的 App name ，然後點擊 Create app
+2. Set an App name you like and click Create App 
   ![](https://i.imgur.com/WJ85jXR.png)
-3. 下載 [範例程式碼](https://github.com/yaoandy107/line-bot-tutorial/archive/master.zip)
-4. 進入 [Line 控制台](https://developers.line.me/console/)，選擇你剛剛創建的機器人
+3. Download sample code [sample code](https://github.com/yaoandy107/line-bot-tutorial/archive/master.zip)
+4. Enter [Line setting](https://developers.line.me/console/) to add new provider and select it
   ![](https://i.imgur.com/n3bQym2.png)
-5. 取得 **channel secret** 和 **channel access token**，如果沒有內容，請點 Issue
-  ![](https://i.imgur.com/entIggx.png)
-6. 使用編輯器開啟範例程式碼資料夾內的 app.py，填入 **channel secret** 和 **channel access token**
+5. Get **channel secret** and **channel access token**，if there aren't any texts，click <Issue>
+6. Open sample code file: 'app.py' on your IDE ，input **channel secret** and **channel access token** into hint fields
   ![](https://i.imgur.com/Uz16joi.png)
-7. 並使用 Heroku CLI 將程式部署到 Heroku 上面 （請參考 [使用 Heroku CLI](#使用-heroku-cli)）
-8. 使用以下 URL 格式在控制台中輸入 webhook URL 
+7. Use Heroku CLI to deploy the code onto Heroku（Please refer to [How to use Heroku CLI](#How-to-use-Heroku-CLI))
+8. Use the below URL to set webhook URL on the app control panel(LINE)
   `{HEROKU_APP_NAME}.herokuapp.com/callback`
-  注意：{HEROKU_APP_NAME} 是步驟2中的應用程序名稱
-9. 通過在控制台的 “Channel settings” 頁面上掃描 QR Code，將您的機器人添加到 LINE 的朋友中
-10. 在 Line 上向您的機器人發送文字訊息，並確認它使用相同的訊息進行回應
+  NOTE：{HEROKU_APP_NAME} is name which you set at step 2
+9. Scan the QR Code on LINE “Channel settings” , your chatbot will be add into your friend list
+10. Send text messages to the chatbot on LINE, verify it has been created successfully
 
-## 使用 Heroku CLI
+## How to use Heroku CLI 
+(Terminal)
 
-1. 下載並安裝 [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)、[Git](https://git-scm.com/)
-2. 開啟範例程式碼資料夾，在路徑上輸入 cmd
-3. 使用終端或命令行應用程序登錄到 Heroku
+1. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)、[Git](https://git-scm.com/)
+2. Locate to your smaple code file
+3. Login to Heroku
 ```shell＝
 heroku login
 ```
-4. 初始化 git
+4. Initialize git
+(當有一個專案在網路上運行的，但從來沒做過版本管理，此時想為他做版本管理時，且已安裝git後的情況下。操作時，首先設定全域的使用者與e-mail)
 ``` shell=
-$ git config --global user.name "你的名字"
-$ git config --global user.email 你的信箱
+$ git config --global user.name "user_name"
+$ git config --global user.email "user_mail"
 ```
-5. 將資料夾初始成 git 空間
+5. Set the file under git environment
 ```shell＝
 git init
 ```
-6. 用 git 將資料夾與 heroku 連接
+6. Login to heroku (Enter your email and password)
 ```shell＝
-heroku git:remote -a {HEROKU_APP_NAME}
+heroku login
 ```
-    注意：{HEROKU_APP_NAME} 是上述步驟2中的應用名稱
-7. 將資料夾底下所有檔案加入 git 清單，如跳出錯誤訊息請重新執行
+7. Use git to link the local file and heroku
+```shell＝
+git remote add "heroku" https://git.heroku.com/{HEROKU_APP_NAME}.git
+```
+    Note：{HEROKU_APP_NAME} is name which you set at step 2
+    Note：remove -v to make sure it is fine
+7. Add all files under the current file (smaple code location) into the git list
 ```shell
 git add .
 ```
-8. 儲存記錄點，如跳出錯誤訊息請詳讀
+8. Store the checkpoint
 ```shell
 git commit -m "Init"
 ```
-    注意："Init" 可使用任意文字替換，其為此紀錄點的敘述
-9. 將在 git 清單中的檔案上傳到 heroku，請確認訊息是否顯示成功
+    Note：Any texts can be substitute for "Init" 
+9. Push files on the git list to heroku, be careful to verify whether the process is sucessful
 ```shell
 git push heroku master
 ```
-**每當需要更新 Bot 時，請重新執行 7、8、9 步驟**
+**When updating the code, just execute step 7,8,9 again**
 
-第一次操作完請回到 [架設範例機器人](#架設範例機器人) 第 5 項繼續接下來的步驟
-## 檢查你的日誌
+## Explanation
 ```
-當成是遇到問題時，可查看日誌以找出錯誤
+You need two files to run the program on heroku
 ```
-要查看您的機器人在 Heroku 的日誌，請按照以下步驟。
-
-1. 如果沒登入，請先透過 Heroku CLI 登入
-```shell
-heroku login
-```
-
-2. 顯示 app 日誌
-```shell
-heroku logs --tail --app {HEROKU_APP_NAME}
-```
-注意：{HEROKU_APP_NAME} 是上述步驟2中的應用名稱。
-​    
-    --tail    # 持續打印日誌
-    --app {HEROKU_APP_NAME}    # 指定 App
-
-## 程式解說
-```
-資料夾裡需含有兩份文件來讓你的程式能在 heroku 上運行
-```
-- Procfile：heroku 執行命令，web: {語言} {檔案}，這邊語言為 python，要自動執行的檔案為 app.py，因此我們改成 **web: python app.py**。
-- requirements.txt：列出所有用到的套件，heroku 會依據這份文件來安裝需要套件
+- Procfile：let heroku run code，web: {language} {file_name}，language: python，the file going to execute: app.py，因此我們改成 **web: python app.py**。
+- requirements.txt：every package you need. Heroku will follow this file to install packages.
 
 ### app.py
-可透過修改程式裡的 handle_message() 方法內的程式碼來達成不同的回覆效果。
+Manipulate handle_message() to present differnt replies
 
 ![](https://i.imgur.com/DNeNbpV.png)
 
@@ -115,24 +97,24 @@ heroku logs --tail --app {HEROKU_APP_NAME}
 如想更多了解此程式，可以去研究 Python3、[Flask 套件](http://docs.jinkan.org/docs/flask/)、[Line bot sdk](https://github.com/line/line-bot-sdk-python)
 
 
-## 更多花樣
-[官方文件](https://github.com/line/line-bot-sdk-python#api)
-### 基本操作
-#### 回應訊息
+## More
+[Official Guide](https://github.com/line/line-bot-sdk-python#api)
+### Basic Operation
+#### Reply Message
 ```python
 line_bot_api.reply_message(reply_token, 訊息物件)
 ```
-#### 主動傳送訊息
-bot 需要有 push 功能才可以做，否則會出錯
+#### Automatical send
+bot needs a push method to implement，or it may pop out errors
 ```python
 line_bot_api.push_message(push_token, 訊息物件)
 ```
 
 ### 傳送訊息物件
 
-[官方文件](https://devdocs.line.me/en/#send-message-object)
+[Official Guide](https://devdocs.line.me/en/#send-message-object)
 
-修改範例程式碼中， handle_message() 方法內的程式碼，可實現多種功能
+Modify handle_message() method in the sample code to present differnt functions.
 
 #### TextSendMessage （文字訊息）
 ```python

@@ -27,7 +27,7 @@ Verify you have already：
 3. Download [sample code](https://github.com/yaoandy107/line-bot-tutorial/archive/master.zip)
 4. Enter [Line setting](https://developers.line.me/console/) to add new provider and select it
   ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/line_panel.png)
-5. Get **channel secret** and **channel access token**，if there aren't any texts，click <Issue>
+5. Get **channel secret** and **channel access token**，if there aren't any texts，click Issue
 6. Open sample code file: 'app.py' on your IDE ，input **channel secret** and **channel access token** into hint fields
   ![](https://github.com/Sabrinalulu/line_chatbot/blob/master/pictures/token1.png)
 7. Use Heroku CLI to deploy the code onto Heroku（Please refer to [How to use Heroku CLI](#How-to-use-Heroku-CLI))

@@ -99,13 +99,13 @@ Manipulate handle_message() to present differnt replies
 ```python
 line_bot_api.reply_message(reply_token, 訊息物件)
 ```
-#### Automatical sending
+#### Automatic sending
 bot needs a push method to implement，or it may pop out errors
 ```python
 line_bot_api.push_message(push_token, 訊息物件)
 ```
 
-### Sending message objects
+### Send message objects
 
 [Official Guide](https://devdocs.line.me/en/#send-message-object)
 

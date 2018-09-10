@@ -1,5 +1,5 @@
 # Line Bot 
-(This README.md is reference to [yaoandy107](https://github.com/yaoandy107/line-bot-tutorial))
+(This README.md refers to [yaoandy107](https://github.com/yaoandy107/line-bot-tutorial))
 
 A Python program presents how to create a LINE Bot SDK on Heroku.
 
@@ -45,7 +45,7 @@ Verify you have already：
 heroku login
 ```
 4. Initialize git
-(當有一個專案在網路上運行的，但從來沒做過版本管理，此時想為他做版本管理時，且已安裝git後的情況下。操作時，首先設定全域的使用者與e-mail)
+(當有一個專案要在網路上運行，但從來沒做過版本管理，想要做版本管理的操作(已安裝git後的情況下)。首先設定全域的使用者與e-mail)
 ``` shell=
 $ git config --global user.name "user_name"
 $ git config --global user.email "user_mail"

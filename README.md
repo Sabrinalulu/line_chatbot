@@ -93,7 +93,7 @@ Manipulate handle_message() to present differnt replies
 
 
 ## Others
-[Official Guide](https://github.com/line/line-bot-sdk-python#api)
+[Official Guide on github](https://github.com/line/line-bot-sdk-python#api)
 ### Basic Operation
 #### Reply Message
 ```python
@@ -107,7 +107,7 @@ line_bot_api.push_message(push_token, 訊息物件)
 
 ### Send message objects
 
-[Official Guide](https://devdocs.line.me/en/#send-message-object)
+[Official Documents](https://devdocs.line.me/en/#send-message-object)
 
 Modify handle_message() method in the sample code to present differnt functions.
 [See More](https://github.com/Sabrinalulu/line_chatbot/blob/master/more_functions.md)

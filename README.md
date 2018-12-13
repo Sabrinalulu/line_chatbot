@@ -1,5 +1,5 @@
 # Line Bot 
-(This README.md refers to [yaoandy107](https://github.com/yaoandy107/line-bot-tutorial))
+(Part of content from [yaoandy107](https://github.com/yaoandy107/line-bot-tutorial)) was referred to this README.md)
 
 A Python program presents how to create a LINE Bot SDK on Heroku.
 
